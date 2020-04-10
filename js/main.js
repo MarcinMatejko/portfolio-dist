@@ -16,6 +16,7 @@ window.addEventListener('scroll', function () {
 const showBtn = document.querySelector('#show-btn');
 const hideBtn = document.querySelector('#hide-btn');
 const about = document.querySelector('#about');
+const aboutNav = document.querySelector('#about-nav');
 showBtn.addEventListener('click', function () {
   if (about.style.display == 'block') {
     about.style.display = 'none';
@@ -32,6 +33,14 @@ showBtn.addEventListener('click', function () {
 hideBtn.addEventListener('click', function () {
   about.style.display = 'none';
   showBtn.innerText = 'Więcej o mnie';
+  document.getElementById('home').scrollIntoView({
+    behavior: 'smooth',
+  });
+});
+
+aboutNav.addEventListener('click', function () {
+  about.style.display = 'block';
+  showBtn.innerText = 'Zwiń o mnie';
   document.getElementById('home').scrollIntoView({
     behavior: 'smooth',
   });
